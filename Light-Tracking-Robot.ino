@@ -1,5 +1,7 @@
+/*
+Our use the Photoresistor and trimpot to measure light
+*/
 void setup() {
-  // put your setup code here, to run once:
   pinMode(11, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(13, OUTPUT);
@@ -11,7 +13,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   int right = analogRead(5);
   int center = analogRead(4);
   int left = analogRead(3);
@@ -20,7 +21,7 @@ void loop() {
   Serial.print(center);
   Serial.print("\t");
   Serial.println(left);
-  if(center>100){
+  if(center>100){ //100 this value is decide on your light sensor setting
     analogWrite(11, 255);
     analogWrite(3, 255);
     Serial.println("center");
